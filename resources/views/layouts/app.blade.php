@@ -20,6 +20,12 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                @auth
+                <a class="navbar-link" href="{{ route('home') }}">
+                    @lang('common.home')
+                </a>
+                @endauth
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -66,6 +72,7 @@
     </div>
 
     <!-- Scripts -->
+    @yield('js')
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
